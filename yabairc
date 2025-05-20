@@ -1,0 +1,42 @@
+#!/bin/bash
+# ~/.config/yabai/yabairc
+# WHY THIS EXISTS: Configures tiling behavior and window rules for yabai.
+# Ensures consistent layout, padding, and keyboard-driven control on startup.
+
+# ─── Layout & Tiling ─────────────────────────────────────
+yabai -m config window_placement          first_child
+yabai -m config layout                    bsp
+yabai -m config window_gap                0
+yabai -m config top_padding               0
+yabai -m config bottom_padding            0
+yabai -m config left_padding              0
+yabai -m config right_padding             0
+
+
+# ─── Optional Focus Commands (used by skhd, not needed here) ─────
+# These are better in skhdrc and not run on every boot:
+# yabai -m window --focus east
+# yabai -m window --focus recent
+# yabai -m window --focus prev
+# yabai -m window --focus first
+# yabai -m space --focus recent
+# yabai -m space --focus prev
+# yabai -m space --focus next
+# yabai -m space --focus 2
+# yabai -m space --focus next || yabai -m space --focus first
+# yabai -m space --focus prev || yabai -m space --focus last
+
+# ─── Optional Resize / Move Commands (remove from autoload) ─────
+# These should be bound in skhd, not run on startup:
+# yabai -m window --move rel:100:-200
+# yabai -m window --resize bottom_right:100:-200
+# yabai -m window --resize abs:500:800
+
+# ─── Float / Swap Toggling (only toggle on key press) ─────
+# Also belongs in skhd:
+# yabai -m window --toggle float
+# yabai -m window --swap north
+# yabai -m window --swap recent
+# yabai -m window --swap prev
+# yabai -m window --swap first
+# yabai -m window --swap mouse

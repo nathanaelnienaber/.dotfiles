@@ -1,0 +1,57 @@
+# ~/.skhdrc
+# WHY THIS EXISTS: Keyboard shortcuts for managing windows, apps, and layout using yabai.
+# Designed for MacBook Pro + Hyper key via Karabiner.
+
+# ✅ Format:
+#   <modifiers> - <key> : <command>
+#   Modifiers:
+#     cmd = ⌘
+#     alt = ⌥
+#     ctrl = ⌃
+#     shift = ⇧
+#     hyper = ctrl+alt+cmd+shift (via Karabiner)
+
+# ─── Reload Config ─────────────────────────────
+hyper - r : skhd --reload
+
+# ─── App Launch Shortcuts ──────────────────────
+hyper - return : open -a "Terminal"
+hyper - c      : open -a "Visual Studio Code"
+hyper - b      : open -a "Brave Browser"
+hyper - m      : open -a "Messages"
+hyper - a      : open -a "AppFlowy"
+hyper - p      : open -a "Proton Mail"
+
+# ─── Focus Windows ─────────────────────────────
+hyper - h : yabai -m window --focus west
+hyper - l : yabai -m window --focus east
+hyper - k : yabai -m window --focus north
+hyper - j : yabai -m window --focus south
+
+# ─── Swap Window Positions ─────────────────────
+hyper + shift - h : yabai -m window --swap west
+hyper + shift - l : yabai -m window --swap east
+hyper + shift - k : yabai -m window --swap north
+hyper + shift - j : yabai -m window --swap south
+
+# ─── Resize Windows ────────────────────────────
+hyper + alt - h : yabai -m window --resize left:-50:0
+hyper + alt - l : yabai -m window --resize right:50:0
+hyper + alt - j : yabai -m window --resize bottom:0:50
+hyper + alt - k : yabai -m window --resize top:0:-50
+
+# ─── Toggle Float / Fullscreen ─────────────────
+hyper - f : yabai -m window --toggle float
+hyper - u : yabai -m window --toggle zoom-fullscreen
+hyper - y : yabai -m window --toggle zoom-parent
+
+# ─── Move Focused Window (One-Hand Laptop Mode) ─
+# NOTE: Relies on muscle memory when using trackpad for precision.
+hyper + ctrl - h : yabai -m window --move rel:-100:0
+hyper + ctrl - l : yabai -m window --move rel:100:0
+hyper + ctrl - k : yabai -m window --move rel:0:-100
+hyper + ctrl - j : yabai -m window --move rel:0:100
+
+
+# Test
+ctrl - q : echo "SKHD TEST" >> /tmp/skhd_test.log
