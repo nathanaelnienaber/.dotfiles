@@ -1,5 +1,8 @@
 #!/bin/bash
 # System-level tweaks for Ubuntu GNOME
+echo "→ Ensuring cpufrequtils is installed..."
+sudo apt update
+sudo apt install -y cpufrequtils
 
 echo "→ Restoring cpufrequtils..."
 sudo cp cpufrequtils /etc/default/cpufrequtils
